@@ -5,3 +5,20 @@
 <% else %>
   <%= link_to "Sign in with Planning Center", "/auth/planning_center" %>
 <% end %>
+<table>
+  <tr>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <% for player in @players %>
+  <tr>
+    <td><%= image_tag avatar_url(player) %></td>
+    <td><%= player.name %></td>
+    <td><%= player.provider_email %></td>
+    <td><%= link_to "Edit", edit_player_path(player) %></td>
+  </tr>
+  <% end %>
+</table>
+
+
