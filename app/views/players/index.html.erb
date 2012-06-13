@@ -1,3 +1,7 @@
-<h1>Listing players</h1>
-<%= link_to "Login using Planning Center", "/auth/planning_center" %>
-
+<h1>Nerf App</h1>
+<% if current_player %>
+  Welcome <%= current_player.name %>!
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Planning Center", "/auth/planning_center" %>
+<% end %>
